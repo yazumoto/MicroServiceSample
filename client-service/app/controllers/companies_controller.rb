@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   def index
     response = conn.get do |req|
       req.url '/companies'
-      req.headers['HTTP_AUTHORIZATION'] = "Bearer #{access_token}"
+      req.headers['AUTHORIZATION'] = "Bearer #{access_token}"
     end
     render json: response.body
   end
